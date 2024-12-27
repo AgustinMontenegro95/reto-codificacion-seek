@@ -1,0 +1,32 @@
+/* src/App.css */
+
+@font-face {
+    font-family: 'Louis-Cafe-Regular';
+    src: url('../assets/fonts/louis_george_cafe/Louis-George-Cafe.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis-Cafe-Bold';
+    src: url('../assets/fonts/louis_george_cafe/Louis-George-Cafe-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis-Cafe-Italic';
+    src: url('../assets/fonts/louis_george_cafe/Louis-George-Cafe-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Louis-Cafe-Light';
+    src: url('../assets/fonts/louis_george_cafe/Louis-George-Cafe-Light.ttf') format('truetype');
+}
+
+html body {
+    margin: 0;
+    font-family: 'Roboto-Thin', sans-serif !important;
+    /* user-select: none !important; */
+}
+
+
+h6 {
+    margin-bottom: 20px;
+}
