@@ -38,10 +38,18 @@ export const LoginPage = () => {
                 height: '100vh',
                 flexDirection: 'column',
                 justifyContent: 'center',
+                alignItems: 'center',
                 backgroundColor: 'black',
             }}
         >
-            <Box sx={{ width: '30%', margin: 'auto', display: 'flex', flexDirection: 'column' }}>
+            <Box
+                sx={{
+                    width: { xs: '90%', sm: '70%', md: '50%', lg: '30%' },
+                    margin: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                }}
+            >
                 <Logo />
                 <Typography
                     sx={{
@@ -49,7 +57,7 @@ export const LoginPage = () => {
                         textAlign: 'center',
                         marginBottom: '2vw',
                         color: '#aaa',
-                        fontSize: '1.5vw',
+                        fontSize: { xs: '4vw', sm: '3vw', md: '2vw', lg: '1.5vw' },
                     }}
                 >
                     SISTEMA DE GESTIÓN DE TAREAS
