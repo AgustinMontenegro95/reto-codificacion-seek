@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "sigeta"
+  },
+  "targets": {
+    "sigeta-167a9": {
+      "hosting": {
+        "default": [
+          "sigeta"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

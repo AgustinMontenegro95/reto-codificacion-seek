@@ -1,30 +1,22 @@
 // src/App.js
 import React from 'react';
-import { CssBaseline, Button, Box } from '@mui/material';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import Login from './components/Login';
-import TaskList from './components/TaskList';
-import TaskForm from './components/TaskForm';
-import useTasks from './hooks/useTask';
+import { CssBaseline, Box } from '@mui/material';
+import { LoginPage } from './pages/login/LoginPage';
+import { useAuth } from './context/AuthContext';
+import { HomePage } from './pages/home/HomePage';
 
-const App = () => {
-    const { auth, logout } = useAuth();
-    const { tasks, loading, removeTask, changeTaskStatus, addTask } = useTasks();
+export const App = () => {
+    const { auth } = useAuth();
 
     return (
         <Box >
             <CssBaseline />
             {auth.isAuthenticated ? (
-                <div>
-                    <Button onClick={logout} color="secondary">Cerrar sesión</Button>
-                    <TaskForm onCreate={addTask} />
-                    <TaskList tasks={tasks} onDelete={removeTask} onUpdate={changeTaskStatus} />
-                </div>
+                <HomePage />
             ) : (
-                <Login />
+                <LoginPage />
             )}
         </Box>
     );
 };
 
-export default App;

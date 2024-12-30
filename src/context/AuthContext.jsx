@@ -1,19 +1,26 @@
-// src/context/AuthContext.js
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { mockJwt } from '../mocks/mockJwt';
 
 // Contexto de autenticación
 const AuthContext = createContext();
 
-// Proveedor del contexto de autenticación
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState({ isAuthenticated: false, token: '' });
 
+    useEffect(() => {
+        const storedToken = localStorage.getItem('jwt-token');
+        if (storedToken) {
+            setAuth({ isAuthenticated: true, token: storedToken });
+        }
+    }, []);
+
     const login = () => {
-        // Simulación de login: en un caso real, verificarías las credenciales y recibirías un JWT
-        setAuth({ isAuthenticated: true, token: 'mock-token' });
+        localStorage.setItem('jwt-token', mockJwt);
+        setAuth({ isAuthenticated: true, token: mockJwt });
     };
 
     const logout = () => {
+        localStorage.removeItem('jwt-token');
         setAuth({ isAuthenticated: false, token: '' });
     };
 
